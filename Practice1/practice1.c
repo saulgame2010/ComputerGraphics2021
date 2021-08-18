@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 void main() {
-    int i;
-    int x1, y1, x2, y2, y;
-    double m, b;
+    int x, y;
+    float x1, y1, x2, y2, m, b;
     printf("Enter a pair of numbers (x1, y1) separated by a space\n");
-    scanf("%d %d", &x1, &y1);
+    scanf("%f %f", &x1, &y1);
     printf("Enter a pair of numbers (x2, y2) separated by a space\n");
-    scanf("%d %d", &x2, &y2);
+    scanf("%f %f", &x2, &y2);
     if((x1 < 0 || y1 > 100)) {
         printf("You must enter numbers between 0 and 100");
         exit(-1);
@@ -25,9 +24,9 @@ void main() {
                 m = (y2 - y1)/(x2 - x1);
                 b = y1 - (m * x1);
                 printf("X\t Y\n");
-                for(i = x1; i <= x2; i++) {
-                    y = (m * i) + b;
-                    printf("%d\t %d\n", i, y);
+                for(x = x1; x <= x2; x++) {
+                    y = (m * x) + b;
+                    printf("%d\t %d\n", x, y);
                 }
             }
         }
